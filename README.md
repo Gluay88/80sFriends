@@ -74,3 +74,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - npm start
 - npm run build
 - serve -s build
+  install tailwindcss
+- npm install -D tailwindcss
+- npx tailwindcss init
+- in index.css or app.css
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
