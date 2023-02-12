@@ -84,3 +84,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 @tailwind components;
 @tailwind utilities;
 ```
+
+Universally unique identifier uuid
+`import { v4 as uuidv4 } from "uuid";`
+
+- npm i uuidv4
+
+- npm install react-bootstrap bootstrap
+- index,js
+  import 'bootstrap/dist/css/bootstrap.min.css';
