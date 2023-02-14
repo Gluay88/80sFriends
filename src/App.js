@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Friend from "./components/Friend";
 import { v4 as uuidv4 } from "uuid";
 import "./index.css";
+import EditFriend from "./components/EditFriend";
+import AddFriend from "./components/AddFriend";
 
 function App() {
   const [friends, setFreinds] = useState([
@@ -40,10 +42,28 @@ function App() {
     setFreinds(updatedFriends);
   }
 
+  function newFriend(name, role, img) {
+    const addFriend = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      img: img,
+    };
+    setFreinds([...friends, addFriend]);
+  }
+
   return (
     <div className="App ">
       <div className="flex flex-wrap justify-center">
         {friends.map((friend, index) => {
+          const editFriend = (
+            <EditFriend
+              id={friend.id}
+              name={friend.name}
+              role={friend.role}
+              updateFriend={updateFriend}
+            />
+          );
           return (
             <div key={index}>
               <Friend
@@ -51,12 +71,13 @@ function App() {
                 name={friend.name}
                 role={friend.role}
                 img={friend.img}
-                updateFriend={updateFriend}
+                editFriend={editFriend}
               />
             </div>
           );
         })}
       </div>
+      <AddFriend newFriend={newFriend} />
     </div>
   );
 }
