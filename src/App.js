@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import "./index.css";
 import EditFriend from "./components/EditFriend";
 import AddFriend from "./components/AddFriend";
+import Header from "./components/Header";
 
 function App() {
   const [friends, setFreinds] = useState([
@@ -53,7 +54,8 @@ function App() {
   }
 
   return (
-    <div className="App ">
+    <div className="App bg-gray-300 min-h-screen">
+      <Header />
       <div className="flex flex-wrap justify-center">
         {friends.map((friend, index) => {
           const editFriend = (
