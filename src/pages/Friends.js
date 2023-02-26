@@ -12,8 +12,8 @@ export default function Friends() {
       });
   }, []);
   return (
-    <>
-      <h1>All my friends: From Django</h1>
+    <div className="sub-title">
+      <h5>All my friends: From Django</h5>
       {friends
         ? friends.map((friend, index) => {
             return (
@@ -23,6 +23,6 @@ export default function Friends() {
             );
           })
         : null}
-    </>
+    </div>
   );
 }

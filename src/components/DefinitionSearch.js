@@ -13,14 +13,12 @@ export default function DefinitionSearch() {
       }}
     >
       <input
-        className="shrink min-w-0 px-2 py-1 rounded"
+        className="shrink min-w-0 px-2 py-1 rounded input-search"
         placeholder="Type here.."
         type="text"
         onChange={(e) => setWord(e.target.value)}
       />
-      <button className="bg-purple-600 hover:bg-purple-700 text-white py-1 px-2 rounded">
-        Seach..
-      </button>
+      <button className="update text-white py-1 px-2 rounded">Seach..</button>
     </form>
   );
 }

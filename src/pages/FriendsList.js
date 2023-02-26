@@ -25,6 +25,42 @@ function Friends() {
       role: "Spirited Away",
       img: "https://discourse.disneyheroesgame.com/uploads/default/original/2X/7/73ae7c0a3c13f84f530762b55c3a56a2dfac81a8.jpg",
     },
+    {
+      id: 4,
+      name: "Uncle Pom",
+      role: "Castle in the Sky",
+      img: "https://static.wikia.nocookie.net/studio-ghibli/images/d/de/Uncle_Pom.png",
+    },
+    {
+      id: 5,
+      name: "Sheeta",
+      role: "Castle in the Sky",
+      img: "https://static.wikia.nocookie.net/studio-ghibli/images/b/bb/Sheeta_3.png",
+    },
+    {
+      id: 6,
+      name: "Sophie Hatter",
+      role: "Howl's Moving Castle",
+      img: "https://static.wikia.nocookie.net/howlscastle/images/c/c1/Sophie_Hatter.jpeg",
+    },
+    {
+      id: 7,
+      name: "Sōsuke",
+      role: "Ponyo",
+      img: "https://static.wikia.nocookie.net/studio-ghibli/images/c/cf/Sosuke.jpg",
+    },
+    {
+      id: 8,
+      name: "Hī-sama",
+      role: "Princess Mononoke",
+      img: "https://static.wikia.nocookie.net/studio-ghibli/images/8/83/Hii-sama.jpg",
+    },
+    {
+      id: 9,
+      name: "Jiro Horikoshi",
+      role: "The Wind Rises",
+      img: "https://static.wikia.nocookie.net/disney/images/8/8b/Wind_Rises_Screenshot_1190.jpg",
+    },
   ]);
 
   //update function renders here..
@@ -53,7 +89,8 @@ function Friends() {
   }
 
   return (
-    <div className="">
+    <div>
+      <p className="flex flex-wrap justify-center main-title">My 80s Friends</p>
       <div className="flex flex-wrap justify-center">
         {friends.map((friend, index) => {
           const editFriend = (

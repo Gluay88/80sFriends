@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-gray-300 {
+  background-image: linear-gradient(
+    -20deg,
+    #e9defa 0%,
+    #fbfcdb 100%
+  ) !important;
+}
+nav,
+footer {
+  background-image: linear-gradient(15deg, #3babad 0%, #033c45 100%) !important;
+  color: rgb(250, 252, 222) !important;
+}
+button {
+  color: #033c45 !important;
+}
+button:hover {
+  background-color: #033c45 !important;
+  color: rgb(250, 252, 222) !important;
+}
+.main-title {
+  color: #033c45 !important;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+.sub-title {
+  color: #033c45 !important;
+  text-align: center;
+  margin-top: 1rem;
+}
+.add-btn {
+  background-color: #033c45 !important;
+  color: rgb(250, 252, 222) !important;
+  border: solid #033c45 0.15rem;
+  border-radius: 5rem !important;
+}
+.add-btn:hover {
+  background-color: rgb(238, 255, 0) !important;
+  color: #033c45 !important;
+  border: solid #033c45 0.15rem;
+}
+a:hover {
+  color: rgb(238, 255, 0) !important;
+}
+.update-btn {
+  color: #033c45 !important;
+}
+.add-modal {
+  color: #033c45 !important;
+  margin-left: 8%;
+}
+.update {
+  background-color: #033c45 !important;
+  border: solid #033c45 0.15rem;
+}
+.close-btn {
+  border: solid #6c757d 0.15rem;
+}
+.update:hover,
+.close-btn:hover {
+  background-color: rgb(238, 255, 0) !important;
+  color: #033c45 !important;
+  border: solid #033c45 0.15rem;
+}
+#edit-modal,
+.modal-footer {
+  width: 85% !important;
+  margin: 0 auto;
+}
+#edit-modal label {
+  color: #033c45 !important;
+}
+#edit-modal input {
+  margin-bottom: 0.75rem;
+}
+.add-friend-form label {
+  width: 100% !important;
+}
+.input-search:focus {
+  outline: none !important;
+}

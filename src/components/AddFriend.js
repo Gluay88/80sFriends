@@ -22,7 +22,7 @@ function AddFriend({ id, name, role, img, updateFriend, newFriend }) {
   return (
     <>
       <button
-        className="block mx-auto m-5 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded"
+        className="block mx-auto m-5 py-2 px-4 add-btn "
         onClick={handleShow}
       >
         Add Friend
@@ -35,26 +35,17 @@ function AddFriend({ id, name, role, img, updateFriend, newFriend }) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add Friend</Modal.Title>
+          <Modal.Title className="add-modal">Add Friend</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form
-            className="w-full max-w-sm"
-            id="edit-modal"
-            onSubmit={handleSubmit}
-          >
-            <div className="md:flex md:items-center mb-6">
-              <div className="md:w-1/3">
-                <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="name"
-                >
-                  Name
-                </label>
+          <form id="edit-modal" onSubmit={handleSubmit}>
+            <div>
+              <div>
+                <label htmlFor="name">Name</label>
               </div>
-              <div className="md:w-2/3">
+              <div>
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white "
                   id="newName"
                   type="text"
                   value={newName}
@@ -63,17 +54,12 @@ function AddFriend({ id, name, role, img, updateFriend, newFriend }) {
                 />
               </div>
               {/* Role starts here.. */}
-              <div className="md:w-1/3">
-                <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="role"
-                >
-                  Role
-                </label>
+              <div>
+                <label htmlFor="role">Role</label>
               </div>
-              <div className="md:w-2/3">
+              <div>
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white "
                   id="newRole"
                   type="text"
                   value={newRole}
@@ -82,17 +68,12 @@ function AddFriend({ id, name, role, img, updateFriend, newFriend }) {
                 />
               </div>
               {/* img starts here.. */}
-              <div className="md:w-1/3">
-                <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  htmlFor="role"
-                >
-                  Image URL
-                </label>
+              <div>
+                <label htmlFor="role">Image URL</label>
               </div>
-              <div className="md:w-2/3">
+              <div>
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white "
                   id="newRole"
                   type="text"
                   value={newImg}
@@ -105,13 +86,13 @@ function AddFriend({ id, name, role, img, updateFriend, newFriend }) {
         </Modal.Body>
         <Modal.Footer>
           <button
-            className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded"
+            className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded close-btn"
             onClick={handleClose}
           >
             Close
           </button>
           <button
-            className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-3 rounded"
+            className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-3 rounded update"
             form="edit-modal"
             onClick={() => {
               newFriend(newName, newRole, newImg);

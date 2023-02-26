@@ -46,8 +46,8 @@ export default function Definition() {
   return (
     <>
       {word ? (
-        <div>
-          <h1>Here is a definition: </h1>
+        <div className="block text-center">
+          <p className="sub-title">Here is a definition: </p>
           {word.map((meaning) => {
             return (
               <p key={uuidv4()}>
@@ -57,7 +57,15 @@ export default function Definition() {
           })}
           <br />
           <p>Continue searching...</p>
-          <DefinitionSearch />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginBottom: "5rem",
+            }}
+          >
+            <DefinitionSearch />
+          </div>
         </div>
       ) : (
         <p>Loading..</p>

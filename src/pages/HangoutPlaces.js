@@ -1,7 +1,7 @@
 export default function HangoutPlaces() {
   return (
     <>
-      <h1>Hangout Places</h1>
+      <p className="sub-title">Hangout Places Coming Soon!!</p>
     </>
   );
 }
