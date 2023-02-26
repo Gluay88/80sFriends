@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import DefinitionSearch from "../components/DefinitionSearch";
 import NotFound from "../components/NotFound";
 
 export default function Definition() {
@@ -8,6 +9,8 @@ export default function Definition() {
   const [notFound, setNotFound] = useState(false);
   //   destructure useParams from route in App.js
   let { search } = useParams();
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     // add params seach
@@ -16,13 +19,21 @@ export default function Definition() {
         if (response.status === 404) {
           setNotFound(true);
         }
+        if (!response.ok) {
+          setError(true);
+          throw new Error("Something went wrong!!");
+        }
         return response.json();
       })
       .then((data) => {
         setWord(data[0].meanings);
+      })
+      .catch((e) => {
+        console.log(e.message);
       });
   }, []);
 
+  // check the state
   if (notFound === true) {
     return (
       <>
@@ -44,6 +55,9 @@ export default function Definition() {
               </p>
             );
           })}
+          <br />
+          <p>Continue searching...</p>
+          <DefinitionSearch />
         </div>
       ) : (
         <p>Loading..</p>

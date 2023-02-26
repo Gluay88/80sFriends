@@ -16,7 +16,7 @@ function App() {
           <Route path="/hangoutplaces" element={<HangoutPlaces />} />
           <Route path="/dictionary" element={<Dictionary />} />
           {/* add param for the url seach here.. :search */}
-          <Route path="/definition/:search" element={<Definition />} />
+          <Route path="/dictionary/:search" element={<Definition />} />
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

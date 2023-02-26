@@ -1,7 +1,7 @@
 export default function NotFound() {
   return (
     <>
-      <p>Sorry! What were you looking for.. It's out of reach!! 🤷🏻‍♀️</p>
+      <p>Sorry!! The requested URL/404 was not found on this server!! 🤷🏻‍♀️</p>
     </>
   );
 }
