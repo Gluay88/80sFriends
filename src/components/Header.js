@@ -7,7 +7,8 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Hangout", href: "/hangoutplaces" },
   { name: "Dictionary", href: "/dictionary" },
-  { name: "Definition", href: "/definition" },
+  // { name: "Definition", href: "/definition" },
+  { name: "Friends", href: "/friends" },
   { name: "Calendar", href: "/calendar" },
 ];
 
@@ -99,7 +100,9 @@ export default function Header(props) {
           {props.children}
         </div>
       </div>
-      <footer>Copyright &copy; Gluay S. Wang</footer>
+      <footer className="flex justify-center py-4 px-4">
+        Copyright &copy; Gluay S. Wang
+      </footer>
     </>
   );
 }

@@ -93,3 +93,180 @@ Universally unique identifier uuid
 - npm install react-bootstrap bootstrap
 - index,js
   import 'bootstrap/dist/css/bootstrap.min.css';
+
+====================================================
+BACKEND note..
+// intall Django - Python
+
+1. brew intall python
+2. mac python3 --version or window py --version
+3. mkdir backend (make directory)
+4. cd backend
+5. python3 -m venv .venv (name verture enviornment)
+6. ls -a
+7. Activate it.. for mac
+
+- . .venv/bin/activate
+- .venv\Source\activate
+  then you get (.venv)
+
+8. install Django (framework)
+9. python -m pip install django
+   command
+10. django-admin
+11. start project here..
+12. django-admin startproject friends .
+13. python3 manage.py runserver
+    http://127.0.0.1:8000/
+
+- touch .gitignore
+  copy code from this website to .gitignore
+  https://www.toptal.com/developers/gitignore/api/django
+- I create a new repo 80sFriends-backend-django
+
+````git remote add origin https://github.com/Gluay88/80sFriends-backend-django.git
+git branch -M main
+git push -u origin main```
+````
+
+Activate virture env
+
+- . .venv/bin/activate
+- python --version (Python 3.11.2)
+- pip --version (pip 22.3.1)
+- pip install django-rest-framework
+- pip install --upgrade pip
+
+* the package doesn't update like package.json in react
+  you have to update it manually
+
+- pip freeze (you get the suggestion packages you want for the project)
+- pip freeze > requirements.txt (file name that keeps track packages you have been installed)
+
+```
+asgiref==3.6.0
+Django==4.1.7
+django-rest-framework==0.1.0
+djangorestframework==3.14.0
+pytz==2022.7.1
+sqlparse==0.4.3
+```
+
+install stuff
+
+- pip install -r requirements.txt
+
+Run this command
+
+- pip freeze > requirements.txt
+  when you update or install package
+
+start the server
+
+- python manage.py runserver
+- python manage.py migrate
+- go to the folder => friends
+- create a new file
+- models.py aka database table
+  models.py
+
+````
+from django.db import models
+class Friend(models.Model):
+    name = models.CharField(max_lenght=200)
+    role = models.CharField(max_lenght=100)
+    ```
+````
+
+- python manage.py makemigrations friends
+- go to settings.py
+  add the name of the app
+
+```
+INSTALLED_APPS = [
+    'friends',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
+- python manage.py makemigrations friends
+
+successfully migration
+
+````
+Migrations for 'friends':
+  friends/migrations/0001_initial.py
+    - Create model Friend
+    ```
+````
+
+then you get a file 0001_initial.py for 1st migration
+
+- migrate again
+- python manage.py migrate
+
+=======================
+urls.py aka like routing in react
+
+```
+from friends import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/friends/', views.friends, name='friends')
+]
+```
+
+- make a file => views.py
+- make a file => serializers.py
+- go to settings.py
+  INSTALLED_APPS = [
+  'rest_framework'
+  'friends',
+
+      add rest_framework there
+
+```
+python manage.py runserver
+```
+
+```
+http://127.0.0.1:8000/api/friends/
+```
+
+create admin.py
+http://127.0.0.1:8000/admin
+creat account == do it through terminal
+
+- python manage.py createsuperuser
+  username: leave blank to use gluay
+  password: gluay123
+
+================
+Front End
+
+```
+fetch("http://localhost:8000/api/friends/")
+```
+
+install CORS in backend when you fetch it
+
+- pip install django-cors-headers
+- pip freeze > requirements.txt
+- add stuff in settings.py
+
+````
+INSTALLED_APPS = [
+    'corsheaders',
+    ```
+    ```
+    MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ```
+````
