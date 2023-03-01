@@ -270,3 +270,6 @@ INSTALLED_APPS = [
     'django.middleware.common.CommonMiddleware',
     ```
 ````
+
+\*\*\* . .venv/bin/activate
+\*\*\* python manage.py runserver
