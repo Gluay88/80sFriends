@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/80sFriends/static/css/main.79649255.css",
+    "main.js": "/80sFriends/static/js/main.6cda7d9c.js",
+    "index.html": "/80sFriends/index.html",
+    "main.79649255.css.map": "/80sFriends/static/css/main.79649255.css.map",
+    "main.6cda7d9c.js.map": "/80sFriends/static/js/main.6cda7d9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79649255.css",
+    "static/js/main.6cda7d9c.js"
+  ]
+}
