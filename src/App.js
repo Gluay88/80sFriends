@@ -7,6 +7,7 @@ import Definition from "./pages/Definition";
 import NotFound from "./components/NotFound";
 import "./index.css";
 import Friends from "./pages/Friends";
+import Friend from "./pages/Friend";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
           {/* add param for the url seach here.. :search */}
           <Route path="/dictionary/:search" element={<Definition />} />
           <Route path="/friends" element={<Friends />} />
+          <Route path="/friends/:id" element={<Friend />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/404" element={<NotFound />} />
         </Routes>
       </Header>
     </BrowserRouter>

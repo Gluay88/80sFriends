@@ -38,7 +38,7 @@ export default function Definition() {
     return (
       <>
         <NotFound />
-        <Link to="/dictionary">Back to search..</Link>
+        <Link to={"/dictionary/"}>Back to search..</Link>
       </>
     );
   }

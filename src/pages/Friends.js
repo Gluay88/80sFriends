@@ -1,5 +1,5 @@
-import { fireEvent } from "@testing-library/react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Friends() {
   const [friends, setFriends] = useState();
@@ -18,7 +18,7 @@ export default function Friends() {
         ? friends.map((friend, index) => {
             return (
               <div key={index}>
-                <p>{friend.name}</p>
+                <Link to={"/friends/" + friend.id}>{friend.name}</Link>
               </div>
             );
           })
